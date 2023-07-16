@@ -68,6 +68,39 @@ sudo make install
 
 ```
 
+- get 请求
+
+```
+auto response = QNet::Get(QNet::QQUrl{"http://www.example/api"},
+                              QNet::QHeader{{QNetworkRequest::ContentTypeHeader, "application/json"}},
+                              QNet::QTimeOut{20000});
+```
+
+打印返回结果:
+```C++
+    qDebug() << "url: " << response.m_url;
+    qDebug() << "elapsed:" << response.m_elapsed;
+    qDebug() << "httpCode: " << response.m_statusCode ;
+    qDebug() << "errorCode: " << response.m_replayError;
+    qDebug() << "errorString: " << response.m_replayErrorString;
+    qDebug() << "data:" << response.m_responseData;
+```
+
+- post 请求
+```
+    QByteArray ba;
+    {
+        QJsonObject jsObj;
+        jsObj.insert("name", "devstone");
+        jsObj.insert("email", "kevinlq0912@gmail.com");
+
+        QJsonDocument jsDoc(jsObj);
+        ba = jsDoc.toJson();
+    }
+    auto response = QNet::Post(QNet::QQUrl{"http://www.example/api"},
+                          QNet::QBodyData{QNet::BodyRawJSON, ba},
+                          QNet::QTimeOut{20000});
+```
 
     
 ## 文档与贡献

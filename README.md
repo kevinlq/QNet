@@ -69,6 +69,39 @@ In your C++ code, include the QNet header file:
 
 ```
 
+- get request
+
+```
+auto response = QNet::Get(QNet::QQUrl{"http://www.example/api"},
+                              QNet::QHeader{{QNetworkRequest::ContentTypeHeader, "application/json"}},
+                              QNet::QTimeOut{20000});
+```
+
+debug result:
+```C++
+    qDebug() << "url: " << response.m_url;
+    qDebug() << "elapsed:" << response.m_elapsed;
+    qDebug() << "httpCode: " << response.m_statusCode ;
+    qDebug() << "errorCode: " << response.m_replayError;
+    qDebug() << "errorString: " << response.m_replayErrorString;
+    qDebug() << "data:" << response.m_responseData;
+```
+
+- post request
+```
+    QByteArray ba;
+    {
+        QJsonObject jsObj;
+        jsObj.insert("name", "devstone");
+        jsObj.insert("email", "kevinlq0912@gmail.com");
+
+        QJsonDocument jsDoc(jsObj);
+        ba = jsDoc.toJson();
+    }
+    auto response = QNet::Post(QNet::QQUrl{"http://www.example/api"},
+                          QNet::QBodyData{QNet::BodyRawJSON, ba},
+                          QNet::QTimeOut{20000});
+```
 
 
 ## Documentation and Contributions
