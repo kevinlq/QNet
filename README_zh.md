@@ -40,16 +40,16 @@
 
 # QNet
 
-[中文/Chinese](README_zh.md)
+[英语/English](README.md)
 
-> QNet is an open-source project that wraps the QNetworkAccessManager class in C++11, aiming to provide a more concise and user-friendly network access tool. The project references the cpr project and has been improved and optimized based on this foundation.
+> QNet是一个使用 `C++11` 封装了`QNetworkAccessManager`类的开源项目，旨在提供一个更加简洁易用的网络访问工具。该项目参考了cpr项目，并在此基础上进行了改进和优化
 
 
-## build and run
+## 使用指南
 
-### Installation
+### 安装
 
-You can install QNet by following these commands:
+你可以通过以下命令安装QNet
 
 ```C++
 git clone https://github.com/kevinlq/QNet.git
@@ -60,30 +60,31 @@ make
 sudo make install
 ```
 
-### Using
+### 使用
 
-In your C++ code, include the QNet header file:
-
+在你的C++代码中，包含QNet头文件
 ```C++
 #include "QNet.h"
 
 ```
 
 
+    
+## 文档与贡献
 
-## Documentation and Contributions
+更多关于QNet的信息和用法，请查看README.md文件。如果你有任何问题或建议，欢迎提交issue或pull request。同时，我们也欢迎你为QNet做出贡献！
 
-For more information about QNet and how to use it, please refer to the README.md file. If you have any questions or suggestions, feel free to submit issues or pull requests. We also welcome you to contribute to QNet!
+查看更多关于这个项目的贡献者，请阅读 [contributors](#)
 
-Please read [CONTRIBUTING.md](#) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Acknowledgments
+## 致谢
 
-Thank [cpr](#) for the open-source project.
+感谢 [cpr](#) 开源项目
 
-## Release History
 
-* V 0.0.1
+## 版本历史
+
+* V 0.0.1 完成常用的http请求封装
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
