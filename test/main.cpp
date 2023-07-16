@@ -12,6 +12,7 @@ int AssertTest(QObject* obj, int argc = 0, char **argv = nullptr)
 
 int main(int argc, char *argv[])
 {
+    QCoreApplication app(argc, argv);
     int status = 0;
 
     status |= AssertTest (new TestHttpRequest(), argc, argv);

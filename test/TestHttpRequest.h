@@ -21,5 +21,8 @@ private Q_SLOTS:
     void tst_post();
     void tst_post_async();
     void tst_post_callback();
+
+private:
+    QByteArray objToJson(const QJsonObject &jsObj);
 };
 
